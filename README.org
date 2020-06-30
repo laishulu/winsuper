@@ -1,0 +1,22 @@
+#+TITLE: README
+
+* About
+
+Convert ~Win~ key to ~super~ key for Emacs in ~Microsoft Windows~ even with input
+method on.
+
+* Internal
+- Use ~AutoHotkey~ to translate ~Win-i~ (~i~ can be any other letter or
+  punctuation) to ~Ctrl-c, @ s i~.
+- By default Emacs map ~Ctrl-c, @ s~ to ~event-apply-super-modifier~, so the
+  following ~i~ will be treated as ~Super i~.
+- ~Win-shift-i~ or ~Win-i~ with ~Capslock~ on is translated to ~Ctrl-c, @ s I~.
+
+* Usage
+- ~winsuper.exe~ without any command line arguments will have a defult delay of
+  150ms after sending out ~Ctrl-c~, it will map all letters and punctuations in
+  the keyboard in the position of ~i~ in the above. Of course some of them won't
+  work (e.g. ~Win-l~) because of the constraint of ~Microsoft windows~ itself.
+ - ~winsuper.exe 200~ will set the delay to 200ms.
+ - ~winsuper.exe 200 "ab"~ will set the delay to 200ms, and also limit the ~i~
+   above to be ~a~ or ~b~ only.
