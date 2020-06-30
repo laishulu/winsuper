@@ -2,7 +2,7 @@
 
 * About
 
-Convert ~Win~ key to ~super~ key for Emacs in ~Microsoft Windows~ even with input
+Convert ~Win~ key to ~Super~ key for Emacs in ~Microsoft Windows~ even with input
 method on.
 
 * Internal
