@@ -8,29 +8,44 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 keymap := {}
 delay := A_Args.Length() ? A_Args[1] : 150
+current := 0
 
-Hotkey, IfWinActive, ahk_class Emacs
+; Hotkey, IfWinActive, ahk_class Emacs
 
 if A_Args.Length() >= 2{
     For i, char in StrSplit(A_Args[2]){
-        hk := "#" . char
-        keymap[hk] := char
-        Hotkey, %hk%, Remap
+        hk1 := "#" . char
+        hk2 := "#+" . char
+        keymap[hk1] := char
+        keymap[hk2] := char
+        Hotkey, %hk1%, Remap
+        Hotkey, %hk2%, Remap
     }
 } else {
     For i in range(ord("!"), ord("~")){
         char := chr(i)
-        hk := "#" . char
-        keymap[hk] := char
-        Hotkey, %hk%, Remap
+        hk1 := "#" . char
+        hk2 := "#+" . char
+        keymap[hk1] := char
+        keymap[hk2] := char
+        Hotkey, %hk1%, Remap
+        Hotkey, %hk2%, Remap
     }
 }
 Exit
 
+GetChar() {
+    local char := keymap[A_ThisHotkey]
+    if InStr(A_ThisHotkey, "+") {
+        StringUpper, char, char
+    }
+    return char
+}
+
 Remap:
 Send ^x
 Sleep % delay
-Send % pre keymap[A_ThisHotkey]
+Send % "@s" GetChar()
 return
 
 range(start, stop:="", step:=1) {
