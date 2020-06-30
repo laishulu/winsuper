@@ -10,7 +10,7 @@ keymap := {}
 delay := A_Args.Length() ? A_Args[1] : 150
 current := 0
 
-; Hotkey, IfWinActive, ahk_class Emacs
+Hotkey, IfWinActive, ahk_class Emacs
 
 if A_Args.Length() >= 2{
     For i, char in StrSplit(A_Args[2]){
@@ -36,7 +36,7 @@ Exit
 
 GetChar() {
     local char := keymap[A_ThisHotkey]
-    if InStr(A_ThisHotkey, "+") {
+    if InStr(A_ThisHotkey, "+") | GetKeyState("CapsLock","T") {
         StringUpper, char, char
     }
     return char
