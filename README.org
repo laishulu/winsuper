@@ -20,6 +20,6 @@ method on.
   punctuations in the keyboard in the position of ~i~ in the above. Of course
   some of them won't work (e.g. ~Win-l~) because of the constraint of
   ~Microsoft windows~ itself.
- - ~winsuper.exe 200~ will set the delay to ~200ms~.
- - ~winsuper.exe 200 "ab"~ will set the delay to 200ms, and also limit the ~i~
-   above to be ~a~ or ~b~ only.
+- ~winsuper.exe 200~ will set the delay to ~200ms~.
+- ~winsuper.exe 200 "ab"~ will set the delay to 200ms, and also limit the ~i~
+  above to be ~a~ or ~b~ only.
