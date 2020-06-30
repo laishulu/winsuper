@@ -6,6 +6,7 @@ Convert ~Win~ key to ~super~ key for Emacs in ~Microsoft Windows~ even with inpu
 method on.
 
 * Internal
+- It only catch the hotkey if the active window is a Emacs window.
 - Use ~AutoHotkey~ to translate ~Win-i~ (~i~ can be any other letter or
   punctuation) to ~Ctrl-c, @ s i~.
 - By default Emacs map ~Ctrl-c, @ s~ to ~event-apply-super-modifier~, so the
