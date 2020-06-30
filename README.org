@@ -8,15 +8,15 @@ method on.
 * Internal
 - It only catch the hotkey if the active window is a Emacs window.
 - Use ~AutoHotkey~ to translate ~Win-i~ (~i~ can be any other letter or
-  punctuation) to ~Ctrl-c, @ s i~.
-- By default Emacs map ~Ctrl-c, @ s~ to ~event-apply-super-modifier~, so the
+  punctuation) to ~Ctrl-x, @ s i~.
+- By default Emacs map ~Ctrl-x, @ s~ to ~event-apply-super-modifier~, so the
   following ~i~ will be treated as ~Super i~.
-- ~Win-shift-i~ or ~Win-i~ with ~Capslock~ on is translated to ~Ctrl-c, @ s I~.
+- ~Win-shift-i~ or ~Win-i~ with ~Capslock~ on is translated to ~Ctrl-x, @ s I~.
 
 * Usage
 - Run ~winsuper.exe~ from command line without any command line arguments, or
   just double click it to run, then for each hotkey, there will be a defult
-  delay of ~150ms~ after sending out ~Ctrl-c~, it will map all letters and
+  delay of ~150ms~ after sending out ~Ctrl-x~, it will map all letters and
   punctuations in the keyboard in the position of ~i~ in the above. Of course
   some of them won't work (e.g. ~Win-l~) because of the constraint of
   ~Microsoft windows~ itself.
